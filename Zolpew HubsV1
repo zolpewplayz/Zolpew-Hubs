@@ -1,0 +1,696 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local InfinteYield = Instance.new("TextButton")
+local AnimalSimulator = Instance.new("TextButton")
+local BedWars = Instance.new("TextButton")
+local PrisonLife = Instance.new("TextButton")
+local FindTheMarker = Instance.new("TextButton")
+local JailBreak = Instance.new("TextButton")
+local FlyGui = Instance.new("TextButton")
+local Arsenalmobile = Instance.new("TextButton")
+local LumberTycoon2 = Instance.new("TextButton")
+local ArsenalPc = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(79, 208, 255)
+Frame.Position = UDim2.new(0.177919701, 0, 0.206831113, 0)
+Frame.Size = UDim2.new(0, 337, 0, 296)
+main.Active = true
+main.Draggable = true
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(73, 193, 236)
+TextLabel.Size = UDim2.new(0, 337, 0, 43)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "ZOLPEW HUB V1"
+TextLabel.TextColor3 = Color3.fromRGB(122, 13, 184)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+InfinteYield.Name = "InfinteYield"
+InfinteYield.Parent = Frame
+InfinteYield.BackgroundColor3 = Color3.fromRGB(176, 16, 255)
+InfinteYield.Position = UDim2.new(0, 0, 0.185810804, 0)
+InfinteYield.Size = UDim2.new(0, 156, 0, 36)
+InfinteYield.Font = Enum.Font.SourceSans
+InfinteYield.Text = "Infinte YIeld"
+InfinteYield.TextColor3 = Color3.fromRGB(79, 208, 255)
+InfinteYield.TextScaled = true
+InfinteYield.TextSize = 14.000
+InfinteYield.TextWrapped = true
+InfinteYield.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+AnimalSimulator.Name = "Animal Simulator"
+AnimalSimulator.Parent = Frame
+AnimalSimulator.BackgroundColor3 = Color3.fromRGB(176, 16, 255)
+AnimalSimulator.Position = UDim2.new(0, 0, 0.358108103, 0)
+AnimalSimulator.Size = UDim2.new(0, 156, 0, 36)
+AnimalSimulator.Font = Enum.Font.SourceSans
+AnimalSimulator.Text = "Animal Simulator"
+AnimalSimulator.TextColor3 = Color3.fromRGB(79, 208, 255)
+AnimalSimulator.TextScaled = true
+AnimalSimulator.TextSize = 14.000
+AnimalSimulator.TextWrapped = true
+AnimalSimulator.MouseButton1Down:connect(function()
+	while true do
+		local args = {
+			[1] = workspace.Eggs.Egg7
+		}
+
+		game:GetService("ReplicatedStorage").EggEvent:FireServer(unpack(args))
+
+		local args = {
+			[1] = workspace.Treasures.Treasure1
+		}
+
+		game:GetService("ReplicatedStorage").TreasureEvent:FireServer(unpack(args))
+		wait(0.5)
+	end
+end)
+
+BedWars.Name = "BedWars"
+BedWars.Parent = Frame
+BedWars.BackgroundColor3 = Color3.fromRGB(176, 16, 255)
+BedWars.Position = UDim2.new(0, 0, 0.520270288, 0)
+BedWars.Size = UDim2.new(0, 156, 0, 36)
+BedWars.Font = Enum.Font.SourceSans
+BedWars.Text = "BedWars"
+BedWars.TextColor3 = Color3.fromRGB(79, 208, 255)
+BedWars.TextScaled = true
+BedWars.TextSize = 14.000
+BedWars.TextWrapped = true
+BedWars.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/ELCkygpv", true))()
+	game.Workspace.Gravity = 60
+	workspace.CurrentCamera.FieldOfView = 120
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 23
+	_G.HeadSize = 11 _G.Disabled = true game:GetService('RunService').RenderStepped:connect(function() if _G.Disabled then for i,v in next, game:GetService('Players'):GetPlayers() do if v.Name ~= game:GetService('Players').LocalPlayer.Name then pcall(function() v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize) v.Character.HumanoidRootPart.Transparency = 0.7 v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue") v.Character.HumanoidRootPart.Material = "Neon" v.Character.HumanoidRootPart.CanCollide = false end) end end end end)
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+	function getnames()
+		for i, v in pairs(game:GetChildren()) do
+			if v.ClassName == "Players" then
+				return v.Name
+			end
+		end
+	end
+	local players = getnames()
+	local LP = game:GetService("Players").LocalPlayer
+	coroutine.resume(
+		coroutine.create(
+			function()
+				while wait(1) do
+					coroutine.resume(
+						coroutine.create(
+							function()
+								for _, v in pairs(game:GetService("Players"):GetPlayers()) do
+									if v.Name ~= LP.Name and v.Character.UpperTorso.Color ~= LP.Character.UpperTorso.Color then
+										v.Character.LowerTorso.CanCollide = false
+										v.Character.LowerTorso.Material = "Neon"
+										v.Character.LowerTorso.Size = Vector3.new(10, 10, 10)
+										v.Character.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
+									end
+								end
+							end
+						)
+					)
+				end
+			end
+		)
+	)
+
+end)
+
+PrisonLife.Name = "Prison Life"
+PrisonLife.Parent = Frame
+PrisonLife.BackgroundColor3 = Color3.fromRGB(176, 16, 255)
+PrisonLife.Position = UDim2.new(0, 0, 0.679054081, 0)
+PrisonLife.Size = UDim2.new(0, 156, 0, 36)
+PrisonLife.Font = Enum.Font.SourceSans
+PrisonLife.Text = "Prison Life"
+PrisonLife.TextColor3 = Color3.fromRGB(79, 208, 255)
+PrisonLife.TextScaled = true
+PrisonLife.TextSize = 14.000
+PrisonLife.TextWrapped = true
+PrisonLife.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/mHfK0Xk4", true))()
+end)
+
+FindTheMarker.Name = "Find The Marker"
+FindTheMarker.Parent = Frame
+FindTheMarker.BackgroundColor3 = Color3.fromRGB(176, 16, 255)
+FindTheMarker.Position = UDim2.new(0, 0, 0.85135138, 0)
+FindTheMarker.Size = UDim2.new(0, 156, 0, 36)
+FindTheMarker.Font = Enum.Font.SourceSans
+FindTheMarker.Text = "Find The Marker"
+FindTheMarker.TextColor3 = Color3.fromRGB(79, 208, 255)
+FindTheMarker.TextScaled = true
+FindTheMarker.TextSize = 14.000
+FindTheMarker.TextWrapped = true
+FindTheMarker.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet('https://gist.githubusercontent.com/stellar-4242/69204e23fdd0bb4e7940b7e10bbd8bdc/raw/ea6c98d464e9c5b11041d318f7c8b49d4da7ae27/GA.lua'))()
+
+	local vu = game:GetService("VirtualUser")
+	game:GetService("Players").LocalPlayer.Idled:connect(function()
+		vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+		wait(1)
+		vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+	end)
+
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Find The Markers Script";
+		Text = "Made by Zolpew Playz"; -- what the text says (ofc)
+		Duration = 60;
+	})
+	wait(1)
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Subscribe To Him";
+		Text = "Now!"; -- what the text says (ofc)
+		Duration = 60;
+	})
+end)
+
+JailBreak.Name = "JailBreak"
+JailBreak.Parent = Frame
+JailBreak.BackgroundColor3 = Color3.fromRGB(176, 16, 255)
+JailBreak.Position = UDim2.new(0.510385752, 0, 0.185810804, 0)
+JailBreak.Size = UDim2.new(0, 156, 0, 36)
+JailBreak.Font = Enum.Font.SourceSans
+JailBreak.Text = "JailBreak"
+JailBreak.TextColor3 = Color3.fromRGB(79, 208, 255)
+JailBreak.TextScaled = true
+JailBreak.TextSize = 14.000
+JailBreak.TextWrapped = true
+JailBreak.MouseButton1Down:connect(function()
+	loadstring(game:GetObjects("rbxassetid://3762448307")[1].Source)()
+end)
+
+FlyGui.Name = "Fly Gui"
+FlyGui.Parent = Frame
+FlyGui.BackgroundColor3 = Color3.fromRGB(176, 16, 255)
+FlyGui.Position = UDim2.new(0.510385752, 0, 0.358108103, 0)
+FlyGui.Size = UDim2.new(0, 156, 0, 36)
+FlyGui.Font = Enum.Font.SourceSans
+FlyGui.Text = "Fly Gui"
+FlyGui.TextColor3 = Color3.fromRGB(79, 208, 255)
+FlyGui.TextScaled = true
+FlyGui.TextSize = 14.000
+FlyGui.TextWrapped = true
+FlyGui.MouseButton1Down:connect(function()
+	game:GetService("StarterGui"):SetCore("SendNotification",{
+		Title = "Credits";
+		Text = "Modified By Zolpew";
+		Duration = 3.5;
+	})
+	-- Gui to Lua
+	-- Version: 3.2
+
+	-- Instances:
+
+	local main = Instance.new("ScreenGui")
+	local Frame = Instance.new("Frame")
+	local up = Instance.new("TextButton")
+	local down = Instance.new("TextButton")
+	local onof = Instance.new("TextButton")
+	local TextLabel = Instance.new("TextLabel")
+	local plus = Instance.new("TextButton")
+	local speed = Instance.new("TextLabel")
+	local mine = Instance.new("TextButton")
+
+	--Properties:
+
+	main.Name = "main"
+	main.Parent = game.CoreGui
+	main.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	Frame.Parent = main
+	Frame.BackgroundColor3 = Color3.fromRGB(163, 255, 137)
+	Frame.BorderColor3 = Color3.fromRGB(103, 221, 213)
+	Frame.Position = UDim2.new(0.100320168, 0, 0.379746825, 0)
+	Frame.Size = UDim2.new(0, 190, 0, 57)
+
+	up.Name = "up"
+	up.Parent = Frame
+	up.BackgroundColor3 = Color3.fromRGB(79, 255, 152)
+	up.Size = UDim2.new(0, 44, 0, 28)
+	up.Font = Enum.Font.SourceSans
+	up.Text = "UP"
+	up.TextColor3 = Color3.fromRGB(0, 0, 0)
+	up.TextSize = 14.000
+
+	down.Name = "down"
+	down.Parent = Frame
+	down.BackgroundColor3 = Color3.fromRGB(215, 255, 121)
+	down.Position = UDim2.new(0, 0, 0.491228074, 0)
+	down.Size = UDim2.new(0, 44, 0, 28)
+	down.Font = Enum.Font.SourceSans
+	down.Text = "DOWN"
+	down.TextColor3 = Color3.fromRGB(0, 0, 0)
+	down.TextSize = 14.000
+
+	onof.Name = "onof"
+	onof.Parent = Frame
+	onof.BackgroundColor3 = Color3.fromRGB(255, 249, 74)
+	onof.Position = UDim2.new(0.702823281, 0, 0.491228074, 0)
+	onof.Size = UDim2.new(0, 56, 0, 28)
+	onof.Font = Enum.Font.SourceSans
+	onof.Text = "fly"
+	onof.TextColor3 = Color3.fromRGB(0, 0, 0)
+	onof.TextSize = 14.000
+
+	TextLabel.Parent = Frame
+	TextLabel.BackgroundColor3 = Color3.fromRGB(242, 60, 255)
+	TextLabel.Position = UDim2.new(0.469327301, 0, 0, 0)
+	TextLabel.Size = UDim2.new(0, 100, 0, 28)
+	TextLabel.Font = Enum.Font.SourceSans
+	TextLabel.Text = "Fly Gui V2"
+	TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+	TextLabel.TextScaled = true
+	TextLabel.TextSize = 14.000
+	TextLabel.TextWrapped = true
+
+	plus.Name = "plus"
+	plus.Parent = Frame
+	plus.BackgroundColor3 = Color3.fromRGB(133, 145, 255)
+	plus.Position = UDim2.new(0.231578946, 0, 0, 0)
+	plus.Size = UDim2.new(0, 45, 0, 28)
+	plus.Font = Enum.Font.SourceSans
+	plus.Text = "+"
+	plus.TextColor3 = Color3.fromRGB(0, 0, 0)
+	plus.TextScaled = true
+	plus.TextSize = 14.000
+	plus.TextWrapped = true
+
+	speed.Name = "speed"
+	speed.Parent = Frame
+	speed.BackgroundColor3 = Color3.fromRGB(255, 85, 0)
+	speed.Position = UDim2.new(0.468421042, 0, 0.491228074, 0)
+	speed.Size = UDim2.new(0, 44, 0, 28)
+	speed.Font = Enum.Font.SourceSans
+	speed.Text = "1"
+	speed.TextColor3 = Color3.fromRGB(0, 0, 0)
+	speed.TextScaled = true
+	speed.TextSize = 14.000
+	speed.TextWrapped = true
+
+	mine.Name = "mine"
+	mine.Parent = Frame
+	mine.BackgroundColor3 = Color3.fromRGB(123, 255, 247)
+	mine.Position = UDim2.new(0.231578946, 0, 0.491228074, 0)
+	mine.Size = UDim2.new(0, 45, 0, 29)
+	mine.Font = Enum.Font.SourceSans
+	mine.Text = "-"
+	mine.TextColor3 = Color3.fromRGB(0, 0, 0)
+	mine.TextScaled = true
+	mine.TextSize = 14.000
+	mine.TextWrapped = true
+
+	speeds = 1
+
+	local speaker = game:GetService("Players").LocalPlayer
+
+	local chr = game.Players.LocalPlayer.Character
+	local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")
+
+	nowe = false
+
+	Frame.Active = true -- main = gui
+	Frame.Draggable = true
+
+	onof.MouseButton1Down:connect(function()
+
+		if nowe == true then
+			nowe = false
+
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Climbing,true)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.FallingDown,true)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Flying,true)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Freefall,true)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.GettingUp,true)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Jumping,true)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Landed,true)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Physics,true)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.PlatformStanding,true)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Ragdoll,true)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Running,true)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.RunningNoPhysics,true)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Seated,true)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.StrafingNoPhysics,true)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Swimming,true)
+			speaker.Character.Humanoid:ChangeState(Enum.HumanoidStateType.RunningNoPhysics)
+		else 
+			nowe = true
+
+
+
+			for i = 1, speeds do
+				spawn(function()
+
+					local hb = game:GetService("RunService").Heartbeat	
+
+
+					tpwalking = true
+					local chr = game.Players.LocalPlayer.Character
+					local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")
+					while tpwalking and hb:Wait() and chr and hum and hum.Parent do
+						if hum.MoveDirection.Magnitude > 0 then
+							chr:TranslateBy(hum.MoveDirection)
+						end
+					end
+
+				end)
+			end
+			game.Players.LocalPlayer.Character.Animate.Disabled = true
+			local Char = game.Players.LocalPlayer.Character
+			local Hum = Char:FindFirstChildOfClass("Humanoid") or Char:FindFirstChildOfClass("AnimationController")
+
+			for i,v in next, Hum:GetPlayingAnimationTracks() do
+				v:AdjustSpeed(0)
+			end
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Climbing,false)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.FallingDown,false)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Flying,false)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Freefall,false)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.GettingUp,false)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Jumping,false)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Landed,false)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Physics,false)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.PlatformStanding,false)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Ragdoll,false)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Running,false)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.RunningNoPhysics,false)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Seated,false)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.StrafingNoPhysics,false)
+			speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Swimming,false)
+			speaker.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Swimming)
+		end
+
+
+
+
+
+		local plr = game.Players.LocalPlayer
+		local UpperTorso = plr.Character.LowerTorso
+		local flying = true
+		local deb = true
+		local ctrl = {f = 0, b = 0, l = 0, r = 0}
+		local lastctrl = {f = 0, b = 0, l = 0, r = 0}
+		local maxspeed = 50
+		local speed = 0
+
+
+		local bg = Instance.new("BodyGyro", UpperTorso)
+		bg.P = 9e4
+		bg.maxTorque = Vector3.new(9e9, 9e9, 9e9)
+		bg.cframe = UpperTorso.CFrame
+		local bv = Instance.new("BodyVelocity", UpperTorso)
+		bv.velocity = Vector3.new(0,0.1,0)
+		bv.maxForce = Vector3.new(9e9, 9e9, 9e9)
+		if nowe == true then
+			plr.Character.Humanoid.PlatformStand = true
+		end
+		while nowe == true or game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0 do
+			wait()
+
+			if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then
+				speed = speed+.5+(speed/maxspeed)
+				if speed > maxspeed then
+					speed = maxspeed
+				end
+			elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then
+				speed = speed-1
+				if speed < 0 then
+					speed = 0
+				end
+			end
+			if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then
+				bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
+				lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r}
+			elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then
+				bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
+			else
+				bv.velocity = Vector3.new(0,0,0)
+			end
+
+			bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*50*speed/maxspeed),0,0)
+		end
+		ctrl = {f = 0, b = 0, l = 0, r = 0}
+		lastctrl = {f = 0, b = 0, l = 0, r = 0}
+		speed = 0
+		bg:Destroy()
+		bv:Destroy()
+		plr.Character.Humanoid.PlatformStand = false
+		game.Players.LocalPlayer.Character.Animate.Disabled = false
+		tpwalking = false
+
+
+
+
+
+
+
+
+
+	end)
+
+
+	up.MouseButton1Down:connect(function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,2,0)
+
+	end)
+
+
+	down.MouseButton1Down:connect(function()
+
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,-2,0)
+
+	end)
+
+
+	game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char)
+		wait(0.7)
+		game.Players.LocalPlayer.Character.Humanoid.PlatformStand = false
+		game.Players.LocalPlayer.Character.Animate.Disabled = false
+
+	end)
+
+
+	plus.MouseButton1Down:connect(function()
+		speeds = speeds + 1
+		speed.Text = speeds
+		if nowe == true then
+
+
+			tpwalking = false
+			for i = 1, speeds do
+				spawn(function()
+
+					local hb = game:GetService("RunService").Heartbeat	
+
+
+					tpwalking = true
+					local chr = game.Players.LocalPlayer.Character
+					local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")
+					while tpwalking and hb:Wait() and chr and hum and hum.Parent do
+						if hum.MoveDirection.Magnitude > 0 then
+							chr:TranslateBy(hum.MoveDirection)
+						end
+					end
+
+				end)
+			end
+		end
+	end)
+	mine.MouseButton1Down:connect(function()
+		if speeds == 1 then
+			speed.Text = 'can not be less than 1'
+			wait(1)
+			speed.Text = speeds
+		else
+			speeds = speeds - 1
+			speed.Text = speeds
+			if nowe == true then
+				tpwalking = false
+				for i = 1, speeds do
+					spawn(function()
+
+						local hb = game:GetService("RunService").Heartbeat	
+
+
+						tpwalking = true
+						local chr = game.Players.LocalPlayer.Character
+						local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")
+						while tpwalking and hb:Wait() and chr and hum and hum.Parent do
+							if hum.MoveDirection.Magnitude > 0 then
+								chr:TranslateBy(hum.MoveDirection)
+							end
+						end
+
+					end)
+				end
+			end
+		end
+	end)
+
+end)
+
+Arsenalmobile.Name = "Arsenal(mobile)"
+Arsenalmobile.Parent = Frame
+Arsenalmobile.BackgroundColor3 = Color3.fromRGB(176, 16, 255)
+Arsenalmobile.Position = UDim2.new(0.510385752, 0, 0.520270288, 0)
+Arsenalmobile.Size = UDim2.new(0, 156, 0, 36)
+Arsenalmobile.Font = Enum.Font.SourceSans
+Arsenalmobile.Text = "Arsenal(Mobile)"
+Arsenalmobile.TextColor3 = Color3.fromRGB(79, 208, 255)
+Arsenalmobile.TextScaled = true
+Arsenalmobile.TextSize = 14.000
+Arsenalmobile.TextWrapped = true
+Arsenalmobile.MouseButton1Down:connect(function()
+	-- This is version v1.2
+	-- This script can be laggy depends ur cpu
+	local vu = game:GetService("VirtualUser")
+	game:GetService("Players").LocalPlayer.Idled:connect(function()
+		vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+		wait(1)
+		vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+	end)
+
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Arsenal Script";
+		Text = "Made by Zolpew"; 
+		Duration = 10;
+	})
+	wait(1)
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Enjoy!";
+		Text = "Please give credit!"; 
+		Duration = 999;
+	})
+
+
+
+
+	local replicationstorage = game.ReplicatedStorage
+
+	for i, v in pairs(replicationstorage.Weapons:GetDescendants()) do
+		if v.Name == "Auto" then
+			v.Value = true
+		end
+		if v.Name == "RecoilControl" then
+			v.Value = 0
+		end
+		if v.Name == "MaxSpread" then
+			v.Value = 0
+		end
+		if v.Name == "ReloadTime" then
+			v.Value = 0
+		end
+		if v.Name == "FireRate" then
+			v.Value = 0.07
+		end
+		if v.Name == "Crit" then
+			v.Value = 20
+		end
+	end
+	function getplrsname() for i,v in pairs(game:GetChildren()) do if v.ClassName == "Players" then return v.Name end end end local players = getplrsname() local plr = game[players].LocalPlayer coroutine.resume(coroutine.create(function() while wait(1) do coroutine.resume(coroutine.create(function() for _,v in pairs(game[players]:GetPlayers()) do if v.Name ~= plr.Name and v.Character then v.Character.RightUpperLeg.CanCollide = false v.Character.RightUpperLeg.Transparency = 10 v.Character.RightUpperLeg.Size = Vector3.new(21,21,21) v.Character.LeftUpperLeg.CanCollide = false v.Character.LeftUpperLeg.Transparency = 10 v.Character.LeftUpperLeg.Size = Vector3.new(21,21,21) v.Character.HeadHB.CanCollide = false v.Character.HeadHB.Transparency = 10 v.Character.HeadHB.Size = Vector3.new(21,21,21) v.Character.HumanoidRootPart.CanCollide = false v.Character.HumanoidRootPart.Transparency = 10 v.Character.HumanoidRootPart.Size = Vector3.new(21,21,21) end end end)) end end)) loadstring(game:HttpGet(('https://raw.githubusercontent.com/Cesare0328/my-scripts/main/arsenal%20updated%20invis.lua'),true))()
+	GUI_MAIN                           = Instance.new('ScreenGui', game.CoreGui)
+	GUI_TARGET                         = Instance.new('TextLabel', GUI_MAIN)
+	GUI_AIM_AT                         = Instance.new('TextLabel', GUI_MAIN)
+
+	GUI_MAIN.Name                      = ''
+
+	GUI_TARGET.Size                    = UDim2.new(0,200,0,30)
+	GUI_TARGET.BackgroundTransparency  = 0.5
+	GUI_TARGET.BackgroundColor         = BrickColor.new('Fossil')
+	GUI_TARGET.BorderSizePixel         = 0
+	GUI_TARGET.Position                = UDim2.new(0.5,-100,0,0)
+	GUI_TARGET.Text                    = ' '
+	GUI_TARGET.TextColor3              = Color3.new(1,1,1)
+	GUI_TARGET.TextStrokeTransparency  = 1
+	GUI_TARGET.TextWrapped             = true
+	GUI_TARGET.FontSize                = 'Size24'
+	GUI_TARGET.Font                    = 'SourceSansBold'
+
+	GUI_AIM_AT.Size                    = UDim2.new(0,200,0,20)
+	GUI_AIM_AT.BackgroundTransparency  = 0.5
+	GUI_AIM_AT.BackgroundColor         = BrickColor.new('Fossil')
+	GUI_AIM_AT.BorderSizePixel         = 0
+	GUI_AIM_AT.Position                = UDim2.new(0.5,-100,0,30)
+	GUI_AIM_AT.Text                    = ''
+	GUI_AIM_AT.TextColor3              = Color3.new(1,1,1)
+	GUI_AIM_AT.TextStrokeTransparency  = 1
+	GUI_AIM_AT.TextWrapped             = true
+	GUI_AIM_AT.FontSize                = 'Size18'
+	GUI_AIM_AT.Font                    = 'SourceSansBold'
+
+
+	--Made by Andrheyplayz_officalyt
+	local gui = Instance.new("BillboardGui");
+	gui.Name = "";
+	gui.AlwaysOnTop = true;
+	gui.LightInfluence = 0;
+	gui.Size = UDim2.new(1.75, 0, 1.75, 0);
+	local frame = Instance.new("Frame", gui);
+	frame.BackgroundColor3 = Color3.fromRGB(170, 0, 0);
+	frame.Size = UDim2.new(1, 0, 1, 0);
+	frame.BorderSizePixel = 4;
+	frame.BorderColor3 = Color3.fromRGB(0, 0, 0);
+	local gi = gui:Clone();
+	local body = frame:Clone();
+	body.Parent = gi;
+	body.BackgroundColor3 = Color3.fromRGB(0, 170, 170);
+
+	for _, v in pairs(game:GetService("Players"):GetPlayers()) do
+		if v.Name ~= game:GetService("Players").LocalPlayer.Name and v.Character and v.Character:FindFirstChild("Head") then
+			gui:Clone().Parent = v.Character.Head;
+		end
+	end
+	local c = 1 function zigzag(X)  return math.acos(math.cos(X * math.pi)) / math.pi end game:GetService("RunService").RenderStepped:Connect(function()  if game.Workspace.Camera:FindFirstChild('Arms') then   for i,v in pairs(game.Workspace.Camera.Arms:GetDescendants()) do    if v.ClassName == 'MeshPart' then      v.Color = Color3.fromHSV(zigzag(c),1,1)     c = c + .0001    end   end  end end)
+	net = true -- if false = do nothing
+	notify = true -- set this to false if u don't want to see notiflication
+
+	loadstring("\13\10\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\71\101\116\79\98\106\101\99\116\115\40\34\114\98\120\97\115\115\101\116\105\100\58\47\47\55\50\53\55\55\54\49\55\56\53\34\41\91\49\93\46\83\111\117\114\99\101\41\40\41\13\10")()
+end)
+
+LumberTycoon2.Name = "Lumber Tycoon 2"
+LumberTycoon2.Parent = Frame
+LumberTycoon2.BackgroundColor3 = Color3.fromRGB(176, 16, 255)
+LumberTycoon2.Position = UDim2.new(0.510385752, 0, 0.679054081, 0)
+LumberTycoon2.Size = UDim2.new(0, 156, 0, 36)
+LumberTycoon2.Font = Enum.Font.SourceSans
+LumberTycoon2.Text = "Lumber Tycoon 2"
+LumberTycoon2.TextColor3 = Color3.fromRGB(79, 208, 255)
+LumberTycoon2.TextScaled = true
+LumberTycoon2.TextSize = 14.000
+LumberTycoon2.TextWrapped = true
+LumberTycoon2.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet"https://pastebin.com/raw/25abQ0nC")()
+end)
+
+ArsenalPc.Name = "Arsenal(Pc)"
+ArsenalPc.Parent = Frame
+ArsenalPc.BackgroundColor3 = Color3.fromRGB(176, 16, 255)
+ArsenalPc.Position = UDim2.new(0.510385752, 0, 0.85135138, 0)
+ArsenalPc.Size = UDim2.new(0, 156, 0, 36)
+ArsenalPc.Font = Enum.Font.SourceSans
+ArsenalPc.Text = "Arsenal(Pc)"
+ArsenalPc.TextColor3 = Color3.fromRGB(79, 208, 255)
+ArsenalPc.TextScaled = true
+ArsenalPc.TextSize = 14.000
+ArsenalPc.TextWrapped = true
+ArsenalPc.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
+end)
